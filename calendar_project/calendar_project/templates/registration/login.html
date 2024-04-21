@@ -1,0 +1,13 @@
+{% extends "main/base.html" }
+
+{% block title %}
+Login here
+{%end block %}
+
+{% block content %}
+<form method = "post" class = "from-group">
+    {% csrf_token %}
+    <button> type = "submit" class = "btn btn-success">Login</button>
+    <p>Don't have an account? Create one <a href="/calendar_project"></a></p>
+</form>
+{%end block %}
