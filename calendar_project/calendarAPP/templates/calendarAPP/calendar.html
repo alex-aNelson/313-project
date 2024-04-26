@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block content %}
-    {% comment %} <div class="clearfix">
-        {% comment %} <a class="btn btn-info left" href="{'% url 'cal:calendar' %}?{'{ prev_month }}"> Previous Month </a>
-        <a class="btn btn-info right" href="{'% url 'cal:calendar' %}?{'{ next_month }}"> Next Month </a>
-    </div> {% endcomment %}
+<div class="container" style="margin-bottom: 5px;">
+	<a class="btn btn-info" href="{% url 'cal:calendar' %}?{{ prev_month }}"> Previous Month </a>
+	<a class="btn btn-info" style="float: right;" href="{% url 'cal:calendar' %}?{{ next_month }}"> Next Month </a>
+</div>
     {{calendar}}
 {% endblock content %}
