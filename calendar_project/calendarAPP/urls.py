@@ -6,6 +6,6 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.login, name='login'),
-
+    
     # path('', include('django.contrib.auth.urls')),
 ]
