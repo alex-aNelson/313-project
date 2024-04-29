@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container" style="margin-bottom: 5px;">
+<div class="container" style="margin-bottom: 5px; margin-top: 5px;">
 	<a class="btn btn-info" href="{% url 'cal:calendar' %}?{{ prev_month }}"> Previous Month </a>
 	<a class="btn btn-info" style="float: right;" href="{% url 'cal:calendar' %}?{{ next_month }}"> Next Month </a>
 </div>
