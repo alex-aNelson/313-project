@@ -1,12 +1,12 @@
-from django.contrib import admin
 from django.urls import path
-from django.conf.urls import include
 from . import views
 
+app_name = 'cal'
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.login, name='login'),
-    path('login/', views.login, name='login'),
-    path('sign-up/', views.signup, name='signup'),
-    path('', include('django.contrib.auth.urls')),
+    path('', views.home, name='home'),
+    # path('/add-event', views.add, name='add')
+    path('calendar/', views.CalendarView.as_view(), name='calendar'),
+    path('event_detail/<int:pk>',views.event_detail, name="event_detail"),
+    path("update_event/<int:pk>", views.update_event, name="update_event"),
+
 ]

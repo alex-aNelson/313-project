@@ -87,12 +87,3 @@ def update_event(request, pk):
     else:
         messages.success(request, "You must be logged in")
         return redirect("cal:home")
-def login(request):
-    return render(request, "calendarAPP/login.html", {})
-
-# views.py
-from django.shortcuts import render
-
-
-def signup(request):
-    return render(request, 'sign-up.html')
