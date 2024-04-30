@@ -17,8 +17,7 @@
                             <div class="card-body">
                                 <h3 class="card-title">{{event.title}}</h3>
                                 <p class="card-text">Event Date: {{event.event_date|date:"n/d/Y"}}</p>
-                                <a href="#" class="btn btn-primary">More Detail</a>
-                                <a href="#" class="btn btn-primary">Edit</a>
+                                <a href="{% url "cal:event_detail" event.pk %}" class="btn btn-primary">More Detail</a>
                             </div>
                         </div>
                     </div>
@@ -39,8 +38,7 @@
                             <div class="card-body">
                                 <h3 class="card-title">{{event.title}}</h3>
                                 <p class="card-text">Event Date: {{event.event_date|date:"n/d/Y"}}</p>
-                                <a href="#" class="btn btn-outline-primary">More Detail</a>
-                                <a href="#" class="btn btn-outline-info">Edit</a>
+                                <a href="{% url "cal:event_detail" event.pk %}" class="btn btn-outline-primary">More Detail</a>
                             </div>
                         </div>
                     </div>
