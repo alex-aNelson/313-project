@@ -51,14 +51,29 @@
     </style>
 </head>
 <body>
-    <form action="/login" method="post">
+    <form id="loginForm" action="/login" method="post">
         <h2>Login</h2>
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
-        <input type="submit" value="Login">
+        <input type="submit" value="Login" id="loginButton">
         <div class="signup-link">Don't have an account? <a href="sign-up.html">Sign up</a></div>
     </form>
-</body>
+
+    <!-- JavaScript to handle button click -->
+    <script>
+        // Get the login button
+        var loginButton = document.getElementById("loginButton");
+
+        // Add a click event listener to the login button
+        loginButton.addEventListener("click", function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+            
+            // Redirect to another page (e.g., "another-page.html")
+            window.location.href = "another-page.html";
+        });
+    </script>
+    </body>
 </html>

@@ -22,8 +22,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('calendarAPP.urls')),
-    path('', include('calendarAPP.urls')),
-    path('', views.login, name='login'),
-    path('login/', views.login, name='login'),
-    path('sign-up/', views.signup, name='signup'),
+    # path('', include('calendarAPP.urls')),
+    # path('', views.login, name='login'),
+    # path('login/', views.login, name='login'),
+    # path('sign-up/', views.signup, name='signup'),
 ]
