@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+<<<<<<< HEAD
 from . import views
 
 
@@ -27,3 +28,10 @@ urlpatterns = [
     # path('login/', views.login, name='login'),
     # path('sign-up/', views.signup, name='signup'),
 ]
+=======
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('calendarAPP.urls'))
+]
+>>>>>>> df953687f42401944abe624bb952516bf3851c88
