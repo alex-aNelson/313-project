@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 from datetime import date, datetime, timedelta
 from .utils import Calendar
 import calendar
+from .forms import AddEventForm
+from django.contrib import messages
+
 from django.utils.safestring import mark_safe
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -68,3 +71,19 @@ def next_month(d):
 def event_detail(request, pk):
     event = Event.objects.get(pk = pk)
     return render(request, 'calendarAPP/event_detail.html', {'event': event})
+
+def update_event(request, pk):
+    current_event = Event.objects.get(event_id=pk)
+    form = AddEventForm(request.POST or None, instance=current_event)
+    if request.user.is_authenticated:
+        if request.method == "POST":
+            if form.is_valid():
+                form.save()
+                messages.success(
+                    request, "You have successfully updated the event!"
+                )
+                return redirect("cal:home")
+        return render(request, "calendarAPP/update_event.html", {"form": form})
+    else:
+        messages.success(request, "You must be logged in")
+        return redirect("cal:home")

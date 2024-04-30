@@ -18,8 +18,9 @@
        <div id = 'title'><h4>{{event.title}} </h4></div>
         <div id = 'desc'><p><b>Description: </b>{{event.description}}</p>
         <p><b>Date: </b>{{event.event_date}}</p>
-        <div id = 'button'><a class = "btn btn-primary" href="{% url "index" %}">Events</a></div>
-        <div id ='deleteButton'><a class = "btn btn-danger" href=""></a>Delete</div>
+        <div id = 'button'><a class = "btn btn-primary" href="{% url "cal:home"%}">Events</a>
+        <a class = "btn btn-primary" href="{% url "cal:update_event" event.event_id %}"> Update</a></div>
+        <div id ='deleteButton'><a class = "btn btn-danger" href="">Delete</a></div>
     </div>
     {% endif %}
 
