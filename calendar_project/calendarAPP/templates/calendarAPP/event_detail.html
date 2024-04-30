@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    {% if event %}
+    <div class="card">
+       <div id = 'title'><h4>{{event.title}} </h4></div>
+        <div id = 'desc'><p><b>Description: </b>{{event.description}}</p>
+        <p><b>Date: </b>{{event.event_date}}</p>
+        <div id = 'button'><a class = "btn btn-primary" href="{% url "cal:home"%}">Events</a>
+        <a class = "btn btn-primary" href="{% url "cal:update_event" event.event_id %}"> Update</a></div>
+        <div id ='deleteButton'><a class = "btn btn-danger" href="">Delete</a></div>
+    </div>
+    {% endif %}
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
