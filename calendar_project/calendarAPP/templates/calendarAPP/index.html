@@ -10,7 +10,7 @@
     <div class="today">
         <h2>Today - <script> document.write(new Date().toLocaleDateString()); </script></h2>
         <div class="row">
-            {% if today_events %}
+            {% if today_update_events %}
                 {% for event in today_events %}
                     <div class="col-sm-3">
                         <div class="card">
@@ -31,7 +31,7 @@
     <div class="future" style="margin-top: 30px">
         <h2>Future Events</h2>
         <div class="row">
-            {% if future_events %}
+            {% if future_update_events %}
                 {% for event in future_events %}
                     <div class="col-sm-3"  style="margin-bottom: 25px;">
                         <div class="card">
