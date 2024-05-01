@@ -102,7 +102,7 @@ def login_user(request):
         if user is None: 
             login(request, user)
             messages.success(request, "login was a success")
-            return redirect('class we want to do .html')
+            return redirect('cal:home')
         else:
             messages.success(request, "login was not a success, try again")
             return redirect('home')
