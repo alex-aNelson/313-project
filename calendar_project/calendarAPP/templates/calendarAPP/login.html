@@ -1,13 +1,9 @@
-<!-- <form method = "POST" action="{% url 'cal:login' %}">
-    {% csrf_token %} 
-    <div class="mb-3">
-        <input type = "text" class="form-control" name = "username" placeholder="User Name" required/>
-    </div>
-    <div class="mb-3">
-        <input type = "password" class="form-control" name = "password" placeholder="password" required/>
-    </div>
-    <button type = "submit" class = "btn btn-secondary">login</button>
-</form> -->
+{% extends 'calendarAPP/base.html' %}
+{% block title %}
+   Login 
+{% endblock %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,3 +42,4 @@
     </div>
 </div>
 </body>
+{% endblock content %}

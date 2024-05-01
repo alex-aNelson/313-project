@@ -112,4 +112,4 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     messages.success(request, "Logged out successfully")
-    return redirect('cal:home')
+    return redirect('cal:login')
