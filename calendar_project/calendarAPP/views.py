@@ -99,12 +99,17 @@ def login_user(request):
 
         #authenticate
         user = authenticate(username = username, password =password)
-        if user is None: 
+        if user is not None: 
             login(request, user)
             messages.success(request, "login was a success")
             return redirect('cal:home')
         else:
             messages.success(request, "login was not a success, try again")
-            return redirect('home')
+            return redirect('cal:home')
     else:
-        return render(request, login.html)
+        return render(request, 'calendarAPP/login.html')
+    
+def logout_user(request):
+    logout(request)
+    messages.success(request, "Logged out successfully")
+    return redirect('cal:home')
