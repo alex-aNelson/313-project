@@ -1,9 +1,9 @@
 {% extends "calendarAPP/base.html" %}
-{% block title %}Add Event {% endblock title %}
+{% block title %}Update Event {% endblock title %}
 
 {% block content %}
 <div class='mt-4 p-5'>
-    <h1>Add Event:</h1>
+    <h1>Update Event:</h1>
     <form method="POST" action="">
         {% csrf_token %}
         {% if form.errors %}
@@ -18,7 +18,7 @@
         {% endif %}
         {{form.as_p }}
 
-            <button type="submit" class="btn btn-secondary">Add Event</button>
+            <button type="submit" class="btn btn-secondary">Update Event</button>
     </form>
 </div>
 {% endblock %}
