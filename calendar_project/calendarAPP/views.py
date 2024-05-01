@@ -11,6 +11,9 @@ from django.utils.safestring import mark_safe
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
+
 # Create your views here.
 def home(request):
     # if request.user.is_authenticated():
@@ -87,3 +90,26 @@ def update_event(request, pk):
     else:
         messages.success(request, "You must be logged in")
         return redirect("cal:home")
+    
+    #login view
+def login_user(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+
+        #authenticate
+        user = authenticate(username = username, password =password)
+        if user is not None: 
+            login(request, user)
+            messages.success(request, "login was a success")
+            return redirect('cal:home')
+        else:
+            messages.success(request, "login was not a success, try again")
+            return redirect('cal:home')
+    else:
+        return render(request, 'calendarAPP/login.html')
+    
+def logout_user(request):
+    logout(request)
+    messages.success(request, "Logged out successfully")
+    return redirect('cal:home')
