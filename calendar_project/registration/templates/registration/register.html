@@ -1,0 +1,15 @@
+{% extends 'calendarApp/base.html' %}
+
+{% block title %} Registration {% endblock title %}
+
+{% block content %}
+    <div class = "container mt-3 p-3 w-50 border rounded-3">
+        <h1>Registration</h1>
+       <form method="POST" action="">
+         {% csrf_token %}
+        {{ form.as_p }}
+    
+        <button type="submit" class ="btn btn-secondary">Register</button>
+    </form> 
+    </div>
+{% endblock content %}

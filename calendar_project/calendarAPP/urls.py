@@ -7,6 +7,8 @@ urlpatterns = [
     # path('/add-event', views.add, name='add')
     path('calendar/', views.CalendarView.as_view(), name='calendar'),
     path('event_detail/<int:pk>',views.event_detail, name="event_detail"),
-    path("update_event/<int:pk>", views.update_event, name="update_event"),
-
+    path("update_event/<int:pk>", views.update_event, name="update_event"),\
+    path('logout/', views.logout_user, name = 'logout'),
+    path('login/', views.login_user, name='login')
+    
 ]
