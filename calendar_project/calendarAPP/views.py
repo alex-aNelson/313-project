@@ -98,7 +98,7 @@ def add_event(request):
             if form.is_valid():
                 form.save()
                 messages.success(
-                    request, "You have successfully created the event!"
+                    request, "Added event"
                 )
                 return redirect("cal:home")
         return render(request, "calendarAPP/add_event.html", {"form": form})
