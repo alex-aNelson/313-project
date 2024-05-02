@@ -113,3 +113,13 @@ def logout_user(request):
     logout(request)
     messages.success(request, "Logged out successfully")
     return redirect('cal:home')
+
+def delte_event(request, pk):
+    if request.user.is_authenticated:
+        event = Event.objects.get(event_id=pk)
+        event.delete()
+        messages.success(request, "You have deleted the event successfully!")
+        return redirect("cal:home")
+    else:
+        messages.success(request, "You must be logged in to delete an event.")
+        return redirect("cal:home")
