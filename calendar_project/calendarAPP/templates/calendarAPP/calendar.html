@@ -7,7 +7,7 @@
 {% block content %}
     <br />
     {% if user.is_authenticated %}
-        <h1>This is from calendar.html</h1>
+        {% comment %} <h1>This is from calendar.html</h1> {% endcomment %}
     {% else %}
         <!-- {% include 'calendarAPP/login.html' %} -->
     {% endif %}

@@ -5,8 +5,6 @@
 {% endblock %}
 
 {% block content %}
-    <a class="btn btn-secondary" href="#">Add New Event</a>
-
     <div class="today">
         <h2>Today - <script> document.write(new Date().toLocaleDateString()); </script></h2>
         <div class="row">
@@ -23,7 +21,7 @@
                     </div>
                 {% endfor %}
             {% else %}
-                <p>You have no events today</p>
+                <p>You have no events today.</p>
             {% endif %}
         </div>
     </div>
@@ -44,41 +42,8 @@
                     </div>
                 {% endfor %}
             {% else %}
-                <p>You have no future events</p>
+                <p>You have no future events.</p>
             {% endif %}
         </div>
     </div>
-
-    {% comment %} start of old code {% endcomment %}
-    {% comment %} <h2>Today</h2>
-    {% if today_events %}
-        {% for event in today_events %}
-            <p>{{ event }}</p>
-        {% endfor %}
-    {% else %}
-        <p>You have no events today</p>
-    {% endif %}
-
-    <h2>Future</h2>
-    {% if future_events %}
-        {% for event in future_events %}
-            <p>{{ event }}</p>
-        {% endfor %}
-    {% else %}
-        <p>You have no future events</p>
-    {% endif %} {% endcomment %}
-
-    {% comment %} {% if user_events %}
-        {% for event in user_events %}
-            <p>{{ event }}</p>
-        {% endfor %}
-    {% endif %} {% endcomment %}
-
-    {% comment %} <div class="container">
-        <h2>Today <script> document.write(new Date().toLocaleDateString()); </script></h2>
-       
-    </div>
-    <div>
-        <h2>Upcoming</h2>
-    </div> {% endcomment %}
 {% endblock %}
