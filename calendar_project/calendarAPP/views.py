@@ -91,6 +91,22 @@ def update_event(request, pk):
         messages.success(request, "You must be logged in")
         return redirect("cal:home")
     
+def add_event(request):
+    form = AddEventForm(request.POST or None)
+    if request.user.is_authenticated:
+        if request.method == "POST":
+            if form.is_valid():
+                form.save()
+                messages.success(
+                    request, "Added event"
+                )
+                return redirect("cal:home")
+        return render(request, "calendarAPP/add_event.html", {"form": form})
+    else:
+        messages.success(request, "You must be logged in")
+        return redirect("cal:home")
+
+
     #login view
 def login_user(request):
     if request.method == "POST":
