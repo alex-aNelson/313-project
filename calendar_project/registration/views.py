@@ -20,5 +20,5 @@ def register_user(request):
             return redirect('cal:home')
     else:
         form = SignUpForm
-        return render(request, 'registration/register.html', {'form' : form})
+    return render(request, 'registration/register.html', {'form' : form})
     

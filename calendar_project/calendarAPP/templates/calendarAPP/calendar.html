@@ -9,7 +9,7 @@
     {% if user.is_authenticated %}
         <h1>This is from calendar.html</h1>
     {% else %}
-        {% include 'calendarAPP/login.html' %}
+        <!-- {% include 'calendarAPP/login.html' %} -->
     {% endif %}
 <div class="container" style="margin-bottom: 5px; margin-top: 5px;">
 	<a class="btn btn-info" href="{% url 'cal:calendar' %}?{{ prev_month }}"> Previous Month </a>

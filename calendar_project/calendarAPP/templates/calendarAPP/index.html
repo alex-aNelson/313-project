@@ -7,6 +7,9 @@
 {% block content %}
     {% comment %} <a class="btn btn-secondary" href="{% url 'add' %}">Add New Event</a> {% endcomment %}
 
+    <a href="{% url 'cal:add_event' %}"><button>Add event</button></a>
+
+
     <div class="today">
         <h2>Today - <script> document.write(new Date().toLocaleDateString()); </script></h2>
         <div class="row">
