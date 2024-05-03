@@ -22,7 +22,7 @@ Event Details{% endblock %}
         <p><b> Date: </b>{{event.event_date}}</p>
         <div id = 'button'><a class = "btn btn-primary" href="{% url "cal:home"%}">Go Back</a>
         <a class = "btn btn-primary" href="{% url "cal:update_event" event.event_id %}"> Update</a></div>
-        <div id ='deleteButton'><a class = "btn btn-danger" href="">Delete</a></div>
+        <div id ='deleteButton'><a class = "btn btn-danger" href="{% url "cal:delete" event.event_id%} ">Delete</a></div>
     </div>
     {% endif %}
 {% endblock content %}
